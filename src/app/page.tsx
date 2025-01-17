@@ -41,12 +41,13 @@ const Home = () => {
     }));
   };
   return (
-    <div className="p-4 flex">
-      <div>
+    <div className="p-4 flex gap-4">
+      <div className="border-2 border-red-200 flex-1">
         <div className="mb-4">
           <label htmlFor="nugget">Nugget</label>
           <textarea
             name="nugget"
+            maxLength={600}
             id="nugget"
             onChange={handleClick}
             className="border-2 border-black block px-4 py-2 w-full"
@@ -75,11 +76,13 @@ const Home = () => {
           </button>
         </div>
       </div>
-      <ImageGeneration
-        ref={imageRef}
-        nugget={nuggets.nugget}
-        verse={nuggets.verse}
-      />
+      <div className="border-2 border-red-200  justify-between rounded-lg overflow-hidden">
+        <ImageGeneration
+          ref={imageRef}
+          nugget={nuggets.nugget}
+          verse={nuggets.verse}
+        />
+      </div>
     </div>
   );
 };
